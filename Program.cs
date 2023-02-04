@@ -54,7 +54,7 @@ for ( i = 1; i <= a; i++)
 
 
 
-
+/* 
  //Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 Console.Clear();
 
@@ -107,3 +107,28 @@ if (n < 1 ||n < 6 )
     Console.WriteLine("Это будний день");
 else
     Console.WriteLine("Этот день выходной");
+
+ */
+
+//Дополнительная задача(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=3&id_topic=35&id_problem=223)
+
+Console.Clear();
+
+int n = Convert.ToInt32(Console.ReadLine());
+int max = n, max2 = n;
+while (n != 0)
+{
+    // программный код
+    if (max < n)
+    {
+        max2 = max;
+        max = n;
+    }
+    else if (max2 < n)
+    {
+        max2 = n;
+    }
+    n = Convert.ToInt32(Console.ReadLine());
+}
+Console.WriteLine($"максимальное значение {max}");
+Console.WriteLine($"второй по величине элемент {max2}");
