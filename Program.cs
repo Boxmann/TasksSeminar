@@ -109,7 +109,7 @@ else
     Console.WriteLine("Этот день выходной");
 
  */
-
+/* 
 //Дополнительная задача(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=3&id_topic=35&id_problem=223)
 
 Console.Clear();
@@ -131,4 +131,99 @@ while (n != 0)
     n = Convert.ToInt32(Console.ReadLine());
 }
 Console.WriteLine($"максимальное значение {max}");
-Console.WriteLine($"второй по величине элемент {max2}");
+Console.WriteLine($"второй по величине элемент {max2}"); 
+
+*/
+
+/* 
+//Задача 19 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+Console.Clear();
+
+Console.Write("Введите пятизначное число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+while (n > 100000 || n < 9999)
+{
+    Console.Write("Вы ошиблись!\nВведите пятизначное число: ");
+    n = Convert.ToInt32(Console.ReadLine());
+}
+int n1 = n / 10000;
+int n5 = n % 10;
+
+if (n1 == n5)
+{
+    int n2 = (n - n1 * 10000) / 1000; 
+    n = n / 10;
+    int n4 = n % 10;
+    if (n2 == n4)
+    {
+        Console.WriteLine("число является палиндромом");
+    }
+}
+else 
+{
+    Console.WriteLine("число не является палиндромом");
+}
+ */
+
+/*
+//Задача 21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+Console.Clear();
+
+//первая точка
+Console.Write("Введите x первой точки: ");
+double x1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите y первой точки: ");
+double y1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите z первой точки: ");
+double z1 = Convert.ToDouble(Console.ReadLine());
+
+
+//вторая точка
+Console.Write("Введите x второй точки: ");
+double x2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите y второй точки: ");
+double y2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите z второй точки: ");
+double z2 = Convert.ToDouble(Console.ReadLine());
+
+double A = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)+ Math.Pow(z1 - z2, 2));
+Console.Write($"расстояние между точками: {A}");
+*/
+
+/*
+//Задача 23 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+Console.Clear();
+
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 1; i <= n; i++)
+  Console.WriteLine($"{i} ^ 2 = {Math.Pow(i, 3)} ");
+
+
+*/
+
+Console.Clear();
+
+Console.Write("Введите колличество кустов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int a=0;
+
+while (n <= 2 | n >= 1001)
+{
+        Console.Write("Вы ошиблись!\nВведите колличество кустов: ");
+    n = Convert.ToInt32(Console.ReadLine());
+}
+Console.WriteLine($"Всего кустов:{n} ");
+
+for (int i = 1; i <= n; i++)
+{
+    Console.Write($"{i} ");
+}
+for (int i = 1; i <= n; i=i+2)
+{
+    a = (i+1)+(i)+(i-1);
+}
+Console.WriteLine("");
+Console.WriteLine(a);
