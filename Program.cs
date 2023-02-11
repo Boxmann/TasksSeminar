@@ -203,7 +203,8 @@ for (int i = 1; i <= n; i++)
 
 
 */
-
+/*
+//Доп. задание не правильно сделано
 Console.Clear();
 
 Console.Write("Введите колличество кустов: ");
@@ -227,3 +228,70 @@ for (int i = 1; i <= n; i=i+2)
 }
 Console.WriteLine("");
 Console.WriteLine(a);
+*/
+
+
+//Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+/*
+Console.Clear();
+
+Console.Write("Введите число А: ");
+int a = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите число B: ");
+int b = Convert.ToInt32(Console.ReadLine());
+int z = 1;
+for (int i = 1; i <= b; i++)
+    z = z * a;
+
+    Console.Write(z);
+
+*/
+
+//Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/*
+Console.Clear();
+
+Console.Write("Введите число: ");
+int a = Convert.ToInt32(Console.ReadLine()), result = 0;
+
+while (a != 0)
+{
+    result = result + a % 10;
+    a = a / 10; 
+}
+Console.Write($"Результат: {result}");
+
+*/
+
+//
+Console.Clear();
+int[] array = {165, 163, 160, 160, 157, 157, 155, 154};
+
+  //for (int i = 0; i < array.Length; i++)
+    //array[i] = new Random().Next(150, 170);
+
+Console.WriteLine(string.Join(", ", array));
+
+Console.WriteLine("введите рост Пети: ");
+int n = Convert.ToInt32(Console.ReadLine());
+ for (int i = 0; i < array.Length; i++)
+ {
+    if (array[i] <= n)
+    {
+        Console.WriteLine($"Петя занял {i+1} место в строю");
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Петя занял 8 место в строю");
+        break;
+    }
+    
+ }
+  
+  
+  
+
+  
+  
