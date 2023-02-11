@@ -267,29 +267,21 @@ Console.Write($"Результат: {result}");
 //
 Console.Clear();
 int[] array = {165, 163, 160, 160, 157, 157, 155, 154};
-
-  //for (int i = 0; i < array.Length; i++)
-    //array[i] = new Random().Next(150, 170);
-
 Console.WriteLine(string.Join(", ", array));
 
 Console.WriteLine("введите рост Пети: ");
 int n = Convert.ToInt32(Console.ReadLine());
- for (int i = 0; i < array.Length; i++)
- {
-    if (array[i] <= n)
+int c = 1;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] >= n)
     {
-        Console.WriteLine($"Петя занял {i+1} место в строю");
-        break;
+        c++;
     }
-    else
-    {
-        Console.WriteLine("Петя занял 8 место в строю");
-        break;
-    }
-    
- }
-  
+
+}
+
+Console.WriteLine($"Петя занял {c} место в строю");
   
   
 
