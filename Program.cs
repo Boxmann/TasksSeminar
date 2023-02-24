@@ -350,7 +350,7 @@ ReleaseArray(array);
 */
 
 // Задача 38: Задайте массив вещественных(дробных) чисел. Найдите разницу между максимальным и минимальным элементов массива.
-
+/*
  
 void InputArray(double[] array)
 {
@@ -389,3 +389,35 @@ InputArray(array);
 Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
 ReleaseArray(array);
 
+*/
+
+//Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+/*
+
+Console.Clear();
+Console.Write("Введите элементы через запятую: ");
+int[] array = Array.ConvertAll(Console.ReadLine().Split(","), int.Parse);
+int count = 0;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] > 0)
+    {
+        count++;
+    }
+}
+Console.WriteLine($"Количество чисел больше 0:  {count}");
+*/
+Console.Clear();
+Console.Write("Введите k1: ");
+double  k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b1: ");
+double  b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k2: ");
+double  k2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b2: ");
+double  b2 = Convert.ToDouble(Console.ReadLine());
+double x = (-b2 + b1)/(-k1 + k2);
+double y = k2 * x + b2;
+ 
+ 
+Console.WriteLine($"Пересечение в точке: ({x};{y})");
