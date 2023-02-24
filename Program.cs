@@ -323,15 +323,17 @@ ReleaseArray(array);
 /*
 void InputArray(int[] array)
 {
+    
   for (int i = 0; i < array.Length; i++)
     array[i] = new Random().Next(1, 10); // [1, 9]
+    
 }
 
 void ReleaseArray(int[] array)
 {
     int count = 0;
     int sum = 0;
-    for (int i = 0; i < array.Length; i+=2)
+    for (int i = 1; i < array.Length; i+=2)
     {
         sum  += array[i];
         count++;
@@ -409,6 +411,7 @@ Console.WriteLine($"Количество чисел больше 0:  {count}");
 */
 
 //Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+/*
 Console.Clear();
 Console.Write("Введите k1: ");
 double  k1 = Convert.ToDouble(Console.ReadLine());
@@ -423,3 +426,79 @@ double y = k2 * x + b2;
  
  
 Console.WriteLine($"Пересечение в точке: ({x};{y})");
+*/
+
+//Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+/* 
+void InputMatrix(double [,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] = Convert.ToDouble(new Random().Next(100,1000)) / 10;
+  }
+}
+
+void PrintMatrix(double[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]} \t");
+        Console.WriteLine();
+    }
+}
+
+
+Console.Clear();
+Console.Write("Введите размер массива через пробел: ");
+int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+double[,] matrix = new double[size[0], size[1]];
+InputMatrix(matrix);
+PrintMatrix(matrix);
+*/
+
+//Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+/*
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] = new Random().Next(-99, 100); 
+    }
+}
+
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]} \t");
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+int[,] matrix = new int[9, 9];
+InputMatrix(matrix);
+Console.WriteLine("Введите номер столбца");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите номер строки");
+int n = Convert.ToInt32(Console.ReadLine());
+if (n > matrix.GetLength(0) || m > matrix.GetLength(1))
+{
+ Console.WriteLine("такой позиции в массиве нет");
+}
+else
+{
+ Console.WriteLine($"На данной позиции находиться элемент  {matrix[n-1,m-1]}");
+ 
+}
+PrintMatrix(matrix);
+
+*/
+
+//Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
