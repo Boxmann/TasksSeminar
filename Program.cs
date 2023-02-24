@@ -263,7 +263,7 @@ while (a != 0)
 Console.Write($"Результат: {result}");
 
 */
-
+/* 
 //
 Console.Clear();
 int[] array = {165, 163, 160, 160, 157, 157, 155, 154};
@@ -284,6 +284,108 @@ for (int i = 0; i < array.Length; i++)
 Console.WriteLine($"Петя занял {c} место в строю");
   
   
+ */
+  
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+/*
+Console.Clear();
 
-  
-  
+
+
+void InputArray(int[] array)
+{
+  for (int i = 0; i < array.Length; i++)
+    array[i] = new Random().Next(100, 1000); // [100, 999]
+}
+
+void ReleaseArray(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] % 2 == 0)
+        count++;
+    }
+    Console.WriteLine($"количество чётных чисел в массиве: {count}");
+}
+
+
+Console.Clear();
+Console.Write("Введите кол-во элементов массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n];
+InputArray(array);
+Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
+ReleaseArray(array);
+*/
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+/*
+void InputArray(int[] array)
+{
+  for (int i = 0; i < array.Length; i++)
+    array[i] = new Random().Next(1, 10); // [1, 9]
+}
+
+void ReleaseArray(int[] array)
+{
+    int count = 0;
+    int sum = 0;
+    for (int i = 0; i < array.Length; i+=2)
+    {
+        sum  += array[i];
+        count++;
+    }
+    Console.WriteLine($"Сумма элементов cтоящих на нечётных позициях =  {sum}");
+}
+
+
+Console.Clear();
+Console.Write("Введите кол-во элементов массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n];
+InputArray(array);
+Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
+ReleaseArray(array);
+*/
+
+// Задача 38: Задайте массив вещественных(дробных) чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+ 
+void InputArray(double[] array)
+{
+  for (int i = 0; i < array.Length; i++)
+    array[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+}
+
+void ReleaseArray(double[] array)
+{
+    double max = array[0];
+    double min = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > max)
+        {
+            max = array[i];
+        }
+        if (array[i] < min)
+        {
+            min = array[i];
+        }
+    }
+Console.WriteLine($"max = {max}");
+Console.WriteLine($"min = {min}");
+Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
+}
+    
+
+
+Console.Clear();
+
+Console.Write("Введите кол-во элементов массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+double[] array = new double[n];
+InputArray(array);
+Console.WriteLine($"Массив: [{string.Join(", ", array)}]");
+ReleaseArray(array);
+
