@@ -501,7 +501,7 @@ PrintMatrix(matrix);
 */
 
 //Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-
+/*
 void InputMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -538,3 +538,261 @@ PrintMatrix(matrix);
     avarage = avarage / size[0];
     Console.Write(avarage + "; ");
 }
+*/
+
+// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+/*
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] = new Random().Next(1, 100); 
+    }
+}
+
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]} \t");
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+Console.Write("Введите размер массива через пробел: ");
+int[] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int[,] matrix = new int [size[0], size[1]];
+InputMatrix(matrix);
+PrintMatrix(matrix);
+
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        for (int k = 0; k < matrix.GetLength(1) -1; k++)
+       {
+            if (matrix[i, k] < matrix[i, k + 1])
+            {
+                int l = matrix[i, k + 1];
+                matrix[i, k + 1] = matrix[i, k];
+                matrix[i, k] = l;
+            }
+        }
+        
+    }
+}
+Console.WriteLine("____________________________________________ ");
+PrintMatrix(matrix);
+*/
+
+//Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+/*
+
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] = new Random().Next(1, 100); 
+    }
+}
+
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]} \t");
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+int[,] matrix = new int [5, 3];
+InputMatrix(matrix);
+PrintMatrix(matrix);
+
+int count = 0;
+int minsum =0;
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+    int sum = 0;
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        sum = sum + matrix[i, j]; 
+    }    
+
+    if (minsum==0 || minsum > sum)
+    {
+        minsum = sum;
+        count = i;
+    }
+        
+}
+Console.WriteLine($"строка с наименьшей суммой элементов:  {count}");
+*/
+
+//Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+/*
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            matrix[i, j] = new Random().Next(1, 10); 
+    }
+}
+
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]} \t");
+        Console.WriteLine();
+    }
+}
+
+
+Console.Clear();
+Console.Write("Введите размер первого массива через пробел: ");
+int[] size1 = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int[,] matrix1 = new int [size1[0], size1[1]];
+InputMatrix(matrix1);
+PrintMatrix(matrix1);
+
+Console.Write("Введите размер массива второго через пробел: ");
+int[] size2 = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int[,] matrix2 = new int [size2[0], size2[1]];
+InputMatrix(matrix2);
+PrintMatrix(matrix2);
+
+var matrix3 = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
+if (matrix1.GetLength(1) == matrix2.GetLength(0))
+{
+    for (int i = 0; i < matrix3.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix3.GetLength(1); j++)
+        {
+            matrix3[i, j] = 0;
+            for (int n = 0; n < matrix1.GetLength(1); n++)
+            {
+                matrix3[i, j] += matrix1[i, n] * matrix2[n, j];
+            }
+        }
+    }
+}
+Console.WriteLine("____________________________________");
+PrintMatrix(matrix3);
+
+*/
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+/*
+void InputMatrix(int[,,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix.GetLength(2); k++)
+            matrix[i, j, k] = new Random().Next(1, 10);
+        }
+        
+             
+    }
+}
+
+void PrintMatrix(int[,,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix.GetLength(2); k++)
+            Console.Write($"{matrix[i, j, k],1}({i},{j},{k})\t"); 
+            Console.WriteLine();
+
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+int[,,] matrix = new int [2, 2, 2];
+InputMatrix(matrix);
+PrintMatrix(matrix);
+
+*/
+
+
+//Задача 61: Вывести первые N строк треугольника Паскаля. Сделать вывод в виде равнобедренного треугольника
+/*
+Console.Clear();
+Console.Write("Введите количество строк : ");
+int n = int.Parse(Console.ReadLine());
+int[][] array = new int[n][];
+array[0] = new int[] { 1 };
+for (int i = 1; i < array.Length; i++)
+{
+    array[i] = new int[i + 1];  
+    for (int j = 0; j <= i; j++)
+    {
+        if (j == 0 || j == i)
+            array[i][j] = 1;
+        else
+        {
+            array[i][j] = array[i - 1][j - 1] + array[i - 1][j];
+        }
+    }
+}
+for (int i = 0; i < array.Length; i++)
+{
+    for (int j = 0; j < array[i].Length; j++)
+    {
+        Console.Write("{0,-3} ", array[i][j]);
+    }
+    Console.WriteLine();
+}
+*/
+
+//Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+void InputMatrix(int[,] matrix, int n)
+{
+    int i = 0, j = 0;
+    int value = 1;
+    for (int e = 0; e < n * n; e++)
+    {
+        int k = 0;
+        do { matrix [i, j++] = value++; } while (++k < n - 1);
+        for (k = 0; k < n - 1; k++) matrix [i++, j] = value++;
+        for (k = 0; k < n - 1; k++) matrix [i, j--] = value++;
+        for (k = 0; k < n - 1; k++) matrix [i--, j] = value++;
+        ++i; ++j;
+        n = n < 2 ? 0 : n - 2;
+    }
+}
+
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+        
+        Console.Write($"{matrix[i, j]}\t"); 
+        
+
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+int q = 4;
+int[,] matrix = new int [q, q];
+InputMatrix(matrix, q);
+PrintMatrix(matrix);
