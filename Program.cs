@@ -760,6 +760,7 @@ for (int i = 0; i < array.Length; i++)
 */
 
 //Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+/*
 void InputMatrix(int[,] matrix, int n)
 {
     int i = 0, j = 0;
@@ -796,3 +797,40 @@ int q = 4;
 int[,] matrix = new int [q, q];
 InputMatrix(matrix, q);
 PrintMatrix(matrix);
+*/
+
+//Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+/*
+Console.Clear();
+Console.WriteLine("Введите число M:");
+int M = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите число N:");
+int N = Convert.ToInt32(Console.ReadLine());
+
+int a = M;
+int b = N;
+if (M > N) 
+{
+    a = N;
+    b = M;
+}
+int sum = (b+a)*(b-a+1)/2;
+Console.WriteLine($"Сумма натуральных элементов: {sum}");
+*/
+
+//Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+
+static uint Akk(uint n, uint m)
+{
+    if (n == 0)
+        return m + 1;
+    else
+      if ((n != 0) && (m == 0))
+        return Akk(n - 1, 1);
+    else
+        return Akk(n - 1, Akk(n, m - 1));
+}      
+Console.Clear();
+Console.WriteLine(Akk(2, 3)); 
+Console.WriteLine(Akk(3, 2)); 
